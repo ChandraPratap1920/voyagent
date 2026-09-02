@@ -1,0 +1,402 @@
+[
+  {
+    "slug": "goa",
+    "name": "Goa",
+    "tagline": "Beaches · Nightlife",
+    "overview": "Sun-bleached beach shacks by day, night markets and beach clubs after dark — Goa is India's go-to for doing absolutely nothing productive, on purpose.",
+    "best_time": "Nov – Feb",
+    "from_price_inr": 4850,
+    "images": [
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8R29hJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1652820330085-82a0c2b88d78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8R29hJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1642516864726-a243f416fc00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8R29hJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1541738679621-172e4575a81d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8R29hJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1623832912925-919f8eecfc04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8R29hJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by alexey turenkov on Unsplash",
+      "Photo by Olha Kolesnyk on Unsplash",
+      "Photo by Avin CP on Unsplash",
+      "Photo by Steph Smith on Unsplash",
+      "Photo by Random Tandem on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "manali",
+    "name": "Manali",
+    "tagline": "Mountains · Adventure",
+    "overview": "Pine forests, snow-dusted peaks, and just enough adrenaline — paragliding, river rafting, and valley treks — to make the mountain air feel earned.",
+    "best_time": "Mar – Jun, Oct – Feb (snow)",
+    "from_price_inr": 4100,
+    "images": [
+      "https://images.unsplash.com/photo-1579689189009-874f5cac2db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8TWFuYWxpJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8TWFuYWxpJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1597167231350-d057a45dc868?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8TWFuYWxpJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1516406742981-2b7d67ec4ae8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8TWFuYWxpJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8TWFuYWxpJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4NHww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Vishy on Unsplash",
+      "Photo by Iftekhar Nibir on Unsplash",
+      "Photo by Naman jaswani on Unsplash",
+      "Photo by Vishal Bhutani on Unsplash",
+      "Photo by Surya teja on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "alleppey",
+    "name": "Alleppey",
+    "tagline": "Backwaters · Calm",
+    "overview": "Slow houseboat drifts through palm-lined backwaters, the 'Venice of the East' at its most languid, and a food scene built on fresh Malabar seafood.",
+    "best_time": "Oct – Mar",
+    "from_price_inr": 3900,
+    "images": [
+      "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8S29jaGklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3NTk3MDg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1605955794720-651b9ae7f5e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8S29jaGklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3NTk3MDg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1571679654681-ba01b9e1e117?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8S29jaGklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3NTk3MDg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1627895139551-1329f16953cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8S29jaGklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3NTk3MDg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1682437180059-97bf6f293d85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8S29jaGklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3NTk3MDg1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by kyran low on Unsplash",
+      "Photo by mishab myladan on Unsplash",
+      "Photo by ABHISHEK CHAKRABORTY on Unsplash",
+      "Photo by Jannes Jacobs on Unsplash",
+      "Photo by Surinder Singh on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "jaipur",
+    "name": "Jaipur",
+    "tagline": "Heritage · Forts",
+    "overview": "The Pink City's forts, palaces, and bazaars pack centuries of Rajasthani royalty into a walkable old town — plus a hot air balloon view worth the early alarm.",
+    "best_time": "Oct – Mar",
+    "from_price_inr": 3200,
+    "images": [
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8SmFpcHVyJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8SmFpcHVyJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8SmFpcHVyJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1695395550316-8995ae9d35ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8SmFpcHVyJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1617516202907-ff75846e6667?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8SmFpcHVyJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzU5NzA4Nnww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Aditya Siva on Unsplash",
+      "Photo by Dexter Fernandes on Unsplash",
+      "Photo by Meriç Dağlı on Unsplash",
+      "Photo by Jayanth Muppaneni on Unsplash",
+      "Photo by Prateek Katyal on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "udaipur",
+    "name": "Udaipur",
+    "tagline": "Lakes · Palaces",
+    "overview": "The City of Lakes — palaces that look like they're floating on Pichola, rooftop dinners at sunset, and more romance per square kilometre than anywhere else in Rajasthan.",
+    "best_time": "Sep – Mar",
+    "from_price_inr": 3600,
+    "images": [
+      "https://images.unsplash.com/photo-1589901164570-f9de6556e1c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8VWRhaXB1ciUyMExha2VzfGVufDB8MHx8fDE3ODc2ODg1MDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1633702738734-443da2c18f3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8VWRhaXB1ciUyMExha2VzfGVufDB8MHx8fDE3ODc2ODg1MDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1718799340126-59ca9e145907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8VWRhaXB1ciUyMExha2VzfGVufDB8MHx8fDE3ODc2ODg1MDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1675772120474-b9d7811220f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8VWRhaXB1ciUyMExha2VzfGVufDB8MHx8fDE3ODc2ODg1MDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1715169868134-9ff4871cd13d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8VWRhaXB1ciUyMExha2VzfGVufDB8MHx8fDE3ODc2ODg1MDB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Pranav Panchal on Unsplash",
+      "Photo by Subhashis Das on Unsplash",
+      "Photo by Kashish Lamba on Unsplash",
+      "Photo by Austin Curtis on Unsplash",
+      "Photo by Austin Curtis on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "rishikesh",
+    "name": "Rishikesh",
+    "tagline": "Rapids · Yoga",
+    "overview": "Where the Ganga finally leaves the mountains — whitewater in the morning, riverside yoga at dusk, and not a drop of alcohol in the whole town.",
+    "best_time": "Sep – Nov, Feb – May",
+    "from_price_inr": 4200,
+    "images": [
+      "https://images.unsplash.com/photo-1650341259809-9314b0de9268?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8UmlzaGlrZXNoJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzY4ODUwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1720819029162-8500607ae232?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8UmlzaGlrZXNoJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzY4ODUwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1650341278999-d1b5142cfe30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8UmlzaGlrZXNoJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzY4ODUwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1624807136278-e2973be118ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8UmlzaGlrZXNoJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzY4ODUwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1712510817140-917938f92e5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8UmlzaGlrZXNoJTIwSW5kaWElMjB0cmF2ZWx8ZW58MHwwfHx8MTc4NzY4ODUwMnww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Saurabh Kumar on Unsplash",
+      "Photo by Niloy Banerjee on Unsplash",
+      "Photo by Saurabh Kumar on Unsplash",
+      "Photo by Rishabh Gagneja on Unsplash",
+      "Photo by Travel With Enfield on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "munnar",
+    "name": "Munnar",
+    "tagline": "Tea Hills · Mist",
+    "overview": "Tea estates rolling out in every shade of green, mist that arrives without warning, and hill air that makes you sleep like a child.",
+    "best_time": "Sep – Mar",
+    "from_price_inr": 4400,
+    "images": [
+      "https://images.unsplash.com/photo-1696027356970-b1527cc0d33c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8TXVubmFyJTIwVGVhJTIwSGlsbHN8ZW58MHwwfHx8MTc4NzY4ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1723709431768-d749b0d814b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8TXVubmFyJTIwVGVhJTIwSGlsbHN8ZW58MHwwfHx8MTc4NzY4ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1711192702535-eac61a78ecb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8TXVubmFyJTIwVGVhJTIwSGlsbHN8ZW58MHwwfHx8MTc4NzY4ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1723709411309-f56adb08d1c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8TXVubmFyJTIwVGVhJTIwSGlsbHN8ZW58MHwwfHx8MTc4NzY4ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1719831738921-972e0ec76337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8TXVubmFyJTIwVGVhJTIwSGlsbHN8ZW58MHwwfHx8MTc4NzY4ODUwM3ww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Antony Thomas on Unsplash",
+      "Photo by Adnan Saifee on Unsplash",
+      "Photo by zablanca_clicks on Unsplash",
+      "Photo by Adnan Saifee on Unsplash",
+      "Photo by Anshul Tilondiya on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "pondicherry",
+    "name": "Pondicherry",
+    "tagline": "French Quarter · Beaches",
+    "overview": "Mustard-yellow colonial streets, filter coffee and croissants served in the same cafe, and the Bay of Bengal waiting at the end of every road.",
+    "best_time": "Oct – Mar",
+    "from_price_inr": 3800,
+    "images": [
+      "https://images.unsplash.com/photo-1619500178964-fa56b0e69074?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8UG9uZGljaGVycnklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3Njg4NTA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1658027221421-2904495253dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8UG9uZGljaGVycnklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3Njg4NTA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1619500178934-aa67d4c6623b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8UG9uZGljaGVycnklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3Njg4NTA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1637995735729-c43250f1ef47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8UG9uZGljaGVycnklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3Njg4NTA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1724915781804-28eee32a8848?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8UG9uZGljaGVycnklMjBJbmRpYSUyMHRyYXZlbHxlbnwwfDB8fHwxNzg3Njg4NTA0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Sonika Agarwal on Unsplash",
+      "Photo by Niranjan B S on Unsplash",
+      "Photo by Sonika Agarwal on Unsplash",
+      "Photo by Kishore V on Unsplash",
+      "Photo by Abdullah Azeez on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "varanasi",
+    "name": "Varanasi",
+    "tagline": "Ghats · Ritual",
+    "overview": "The oldest living city on earth. Dawn boat rides along the ghats and an evening aarti you'll still be thinking about years later.",
+    "best_time": "Oct – Mar",
+    "from_price_inr": 3400,
+    "images": [
+      "https://images.unsplash.com/photo-1706186839147-0d708602587b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8VmFyYW5hc2klMjBHaGF0c3xlbnwwfDB8fHwxNzg3Njg4NTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1571536802807-30451e3955d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8VmFyYW5hc2klMjBHaGF0c3xlbnwwfDB8fHwxNzg3Njg4NTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1699630923504-9a24dbaab37c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8VmFyYW5hc2klMjBHaGF0c3xlbnwwfDB8fHwxNzg3Njg4NTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1657089975754-c93bde43b01e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8VmFyYW5hc2klMjBHaGF0c3xlbnwwfDB8fHwxNzg3Njg4NTA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1706186568052-ce7990870b68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8VmFyYW5hc2klMjBHaGF0c3xlbnwwfDB8fHwxNzg3Njg4NTA2fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Martijn Vonk on Unsplash",
+      "Photo by Shiv Prasad on Unsplash",
+      "Photo by Kishor Kumar C K on Unsplash",
+      "Photo by Rahul Kushwaha on Unsplash",
+      "Photo by Martijn Vonk on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "darjeeling",
+    "name": "Darjeeling",
+    "tagline": "Tea · Kanchenjunga",
+    "overview": "Toy trains, first-flush tea, and — if the clouds cooperate at sunrise from Tiger Hill — Kanchenjunga lit up pink across the whole horizon.",
+    "best_time": "Mar – May, Oct – Dec",
+    "from_price_inr": 4900,
+    "images": [
+      "https://images.unsplash.com/photo-1620903376453-25f5a6fd533e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8RGFyamVlbGluZyUyMFRlYXxlbnwwfDB8fHwxNzg3Njg4NTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1710314408818-dbfc395cb48e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8RGFyamVlbGluZyUyMFRlYXxlbnwwfDB8fHwxNzg3Njg4NTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1687179653424-dd5456711be1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8RGFyamVlbGluZyUyMFRlYXxlbnwwfDB8fHwxNzg3Njg4NTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1721070025492-26368db1706f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8RGFyamVlbGluZyUyMFRlYXxlbnwwfDB8fHwxNzg3Njg4NTA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1620903377574-17f06522c42b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8RGFyamVlbGluZyUyMFRlYXxlbnwwfDB8fHwxNzg3Njg4NTA3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by rajat sarki on Unsplash",
+      "Photo by Mosharraf Hossain on Unsplash",
+      "Photo by Nepal Tea Collective on Unsplash",
+      "Photo by Dipankar Bailung on Unsplash",
+      "Photo by rajat sarki on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "agra",
+    "name": "Agra",
+    "tagline": "Taj · Mughal",
+    "overview": "Yes, the Taj — go at sunrise, before the crowds and before the haze. Then Agra Fort and Fatehpur Sikri, which most visitors skip and absolutely shouldn't.",
+    "best_time": "Oct – Mar",
+    "from_price_inr": 2900,
+    "images": [
+      "https://images.unsplash.com/photo-1506462945848-ac8ea6f609cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8QWdyYSUyMFRhanxlbnwwfDB8fHwxNzg3Njg4NTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1681847627328-b1e0b71d0d2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8QWdyYSUyMFRhanxlbnwwfDB8fHwxNzg3Njg4NTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1671375159307-960b2e7fabc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8QWdyYSUyMFRhanxlbnwwfDB8fHwxNzg3Njg4NTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1631781101051-121237b6c7cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8QWdyYSUyMFRhanxlbnwwfDB8fHwxNzg3Njg4NTA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1648167805828-9f6832996954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8QWdyYSUyMFRhanxlbnwwfDB8fHwxNzg3Njg4NTA4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Koushik Chowdavarapu on Unsplash",
+      "Photo by Pradheep Rajendirane on Unsplash",
+      "Photo by Deepak Gupta on Unsplash",
+      "Photo by Abhishek Koli on Unsplash",
+      "Photo by Meraj Mirza on Unsplash"
+    ],
+    "country": "India",
+    "region_code": "IN",
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "bali",
+    "name": "Bali",
+    "country": "Indonesia",
+    "region_code": "ID",
+    "tagline": "Beaches · Temples",
+    "overview": "Rice terraces and cliff temples in the south, black-sand surf breaks in the west, and a cafe scene in Canggu that has ruined coffee for everyone.",
+    "best_time": "Apr – Oct",
+    "from_price_inr": 22000,
+    "images": [
+      "https://images.unsplash.com/photo-1559305289-4c31700ba9cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8QmFsaSUyMEJlYWNoZXN8ZW58MHwwfHx8MTc4ODM2ODYxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1701605305526-7bc0c634543f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8QmFsaSUyMEJlYWNoZXN8ZW58MHwwfHx8MTc4ODM2ODYxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1600177805311-a0dc28c39bdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8QmFsaSUyMEJlYWNoZXN8ZW58MHwwfHx8MTc4ODM2ODYxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1651157630480-f77cc6a73afe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8QmFsaSUyMEJlYWNoZXN8ZW58MHwwfHx8MTc4ODM2ODYxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1576479068577-e332902a7f04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8QmFsaSUyMEJlYWNoZXN8ZW58MHwwfHx8MTc4ODM2ODYxM3ww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by felfin felfin on Unsplash",
+      "Photo by Roméo A. on Unsplash",
+      "Photo by Magnus Lunay on Unsplash",
+      "Photo by Anton Rymarev on Unsplash",
+      "Photo by Darren Lawrence on Unsplash"
+    ],
+    "price_multiplier": 1.2
+  },
+  {
+    "slug": "bangkok",
+    "name": "Bangkok",
+    "country": "Thailand",
+    "region_code": "TH",
+    "tagline": "Street Food · Temples",
+    "overview": "Gilded temples by day, night markets and rooftop bars after dark, and the best street food per square kilometre anywhere on earth.",
+    "best_time": "Nov – Feb",
+    "from_price_inr": 14500,
+    "images": [
+      "https://images.unsplash.com/photo-1506781961370-37a89d6b3095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8QmFuZ2tvayUyMFN0cmVldCUyMEZvb2R8ZW58MHwwfHx8MTc4ODM2ODYxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1628324716243-0c9c29971a58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8QmFuZ2tvayUyMFN0cmVldCUyMEZvb2R8ZW58MHwwfHx8MTc4ODM2ODYxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1655562546244-f54950d0858a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8QmFuZ2tvayUyMFN0cmVldCUyMEZvb2R8ZW58MHwwfHx8MTc4ODM2ODYxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1641638148267-6b157a285fd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8QmFuZ2tvayUyMFN0cmVldCUyMEZvb2R8ZW58MHwwfHx8MTc4ODM2ODYxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1510377971269-d723c13cc478?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8QmFuZ2tvayUyMFN0cmVldCUyMEZvb2R8ZW58MHwwfHx8MTc4ODM2ODYxM3ww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Lisheng Chang on Unsplash",
+      "Photo by Streets of Food on Unsplash",
+      "Photo by ThaimaaOpas on Unsplash",
+      "Photo by Norbert Braun on Unsplash",
+      "Photo by Evan Krause on Unsplash"
+    ],
+    "price_multiplier": 1.0
+  },
+  {
+    "slug": "dubai",
+    "name": "Dubai",
+    "country": "United Arab Emirates",
+    "region_code": "AE",
+    "tagline": "Skyline · Desert",
+    "overview": "The world's tallest everything, gold souks and desert dunes forty minutes out — a city that runs on air conditioning and ambition.",
+    "best_time": "Nov – Mar",
+    "from_price_inr": 16800,
+    "images": [
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8RHViYWklMjBTa3lsaW5lfGVufDB8MHx8fDE3ODgzNjg2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/flagged/photo-1559717865-a99cac1c95d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8RHViYWklMjBTa3lsaW5lfGVufDB8MHx8fDE3ODgzNjg2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/flagged/photo-1559717201-fbb671ff56b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8RHViYWklMjBTa3lsaW5lfGVufDB8MHx8fDE3ODgzNjg2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8RHViYWklMjBTa3lsaW5lfGVufDB8MHx8fDE3ODgzNjg2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1546412414-8035e1776c9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8RHViYWklMjBTa3lsaW5lfGVufDB8MHx8fDE3ODgzNjg2MTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by David Rodrigo on Unsplash",
+      "Photo by ZQ Lee on Unsplash",
+      "Photo by ZQ Lee on Unsplash",
+      "Photo by Wael Hneini on Unsplash",
+      "Photo by Darcey Beau on Unsplash"
+    ],
+    "price_multiplier": 1.6
+  },
+  {
+    "slug": "maldives",
+    "name": "Maldives",
+    "country": "Maldives",
+    "region_code": "MV",
+    "tagline": "Atolls · Overwater",
+    "overview": "One resort per island, water so clear the boats look like they're floating on air, and absolutely nothing to do — which is the entire point.",
+    "best_time": "Nov – Apr",
+    "from_price_inr": 24500,
+    "images": [
+      "https://images.unsplash.com/photo-1489252614717-e24ec918e368?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8TWFsZGl2ZXMlMjBBdG9sbHN8ZW58MHwwfHx8MTc4ODM2ODYxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1611043711784-93f8313526f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8TWFsZGl2ZXMlMjBBdG9sbHN8ZW58MHwwfHx8MTc4ODM2ODYxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1681471809562-75f912ac46fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8TWFsZGl2ZXMlMjBBdG9sbHN8ZW58MHwwfHx8MTc4ODM2ODYxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1681471809343-eb065e2ea356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8TWFsZGl2ZXMlMjBBdG9sbHN8ZW58MHwwfHx8MTc4ODM2ODYxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1681471809185-4798dfbbfd4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8TWFsZGl2ZXMlMjBBdG9sbHN8ZW58MHwwfHx8MTc4ODM2ODYxNXww&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Syd Sujuaan on Unsplash",
+      "Photo by Datingscout on Unsplash",
+      "Photo by Arun J on Unsplash",
+      "Photo by Arun J on Unsplash",
+      "Photo by Arun J on Unsplash"
+    ],
+    "price_multiplier": 5.0
+  },
+  {
+    "slug": "colombo",
+    "name": "Colombo",
+    "country": "Sri Lanka",
+    "region_code": "LK",
+    "tagline": "Colonial · Coast",
+    "overview": "Sri Lanka's front door — colonial arcades, Galle Face sunsets and crab curry, with the hill country and southern beaches a short hop away.",
+    "best_time": "Dec – Mar",
+    "from_price_inr": 12000,
+    "images": [
+      "https://images.unsplash.com/photo-1634518667993-ba73b96a5cde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8Q29sb21ibyUyMENvbG9uaWFsfGVufDB8MHx8fDE3ODgzNjg2MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1740818480098-6cc5196abc59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8Mnx8Q29sb21ibyUyMENvbG9uaWFsfGVufDB8MHx8fDE3ODgzNjg2MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1740815633014-f13990aede28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8Q29sb21ibyUyMENvbG9uaWFsfGVufDB8MHx8fDE3ODgzNjg2MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1740815634199-74f7099e8afd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NHx8Q29sb21ibyUyMENvbG9uaWFsfGVufDB8MHx8fDE3ODgzNjg2MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1740815634167-fb6ae83d319b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8NXx8Q29sb21ibyUyMENvbG9uaWFsfGVufDB8MHx8fDE3ODgzNjg2MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ],
+    "image_credits": [
+      "Photo by Levi Meir Clancy on Unsplash",
+      "Photo by Zoshua Colah on Unsplash",
+      "Photo by Zoshua Colah on Unsplash",
+      "Photo by Zoshua Colah on Unsplash",
+      "Photo by Zoshua Colah on Unsplash"
+    ],
+    "price_multiplier": 0.9
+  }
+]
