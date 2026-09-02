@@ -35,3 +35,30 @@ body {
     display: none; /* Chrome, Safari */
   }
 }
+
+
+/* Landing-page photo marquee. Two rows drifting in opposite directions so the
+   first thing a visitor sees is the actual catalogue, not a grey box. The track
+   holds the images twice, and translating exactly -50% makes the loop seamless. */
+@keyframes voy-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: voy-marquee 45s linear infinite;
+  width: max-content;
+}
+
+.marquee-track-reverse {
+  animation: voy-marquee 55s linear infinite reverse;
+  width: max-content;
+}
+
+/* Motion is decorative here — honour the OS setting and hold it still. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .marquee-track-reverse {
+    animation: none;
+  }
+}
