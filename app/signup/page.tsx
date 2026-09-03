@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-client'
+import AuthHero from '@/components/AuthHero'
 
 export default function SignupPage() {
   const [name, setName] = useState('')
@@ -40,9 +41,12 @@ export default function SignupPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white flex flex-col justify-center px-6 py-12 max-w-md mx-auto">
-      <h1 className="text-3xl font-bold mb-1">Create account</h1>
-      <p className="text-slate-400 mb-8">Start your AI-powered journey today</p>
+    <main className="min-h-screen bg-slate-950 text-white flex flex-col max-w-md mx-auto">
+      <AuthHero variant="signup" />
+
+      <div className="px-6 pb-12 -mt-4">
+        <h1 className="text-3xl font-bold mb-1">Create account</h1>
+        <p className="text-slate-400 mb-8">Start your AI-powered journey today</p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -90,12 +94,13 @@ export default function SignupPage() {
         </button>
       </form>
 
-      <p className="text-center text-slate-400 mt-8">
-        Already have an account?{' '}
-        <Link href="/login" className="text-lime-400 font-medium">
-          Log in
-        </Link>
-      </p>
+        <p className="text-center text-slate-400 mt-8">
+          Already have an account?{' '}
+          <Link href="/login" className="text-lime-400 font-medium">
+            Log in
+          </Link>
+        </p>
+      </div>
     </main>
   )
 }
