@@ -37,7 +37,7 @@ export default function LoginPage() {
     <main className="min-h-screen bg-slate-950 text-white flex flex-col max-w-md mx-auto">
       <AuthHero variant="login" />
 
-      <div className="px-6 pb-12 -mt-4">
+      <div className="px-6 pt-8 pb-12">
         <h1 className="text-3xl font-bold mb-1">Welcome back</h1>
         <p className="text-slate-400 mb-8">Log in to continue your journey</p>
 

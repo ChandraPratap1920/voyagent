@@ -12,16 +12,16 @@
 
 const HEROES = {
   login: {
-    src: 'https://images.unsplash.com/photo-1589901164570-f9de6556e1c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8VWRhaXB1ciUyMExha2VzfGVufDB8MHx8fDE3ODc2ODg1MDB8MA&ixlib=rb-4.1.0&q=75&w=800',
-    alt: 'Udaipur city palace on Lake Pichola',
-    caption: 'Udaipur · Lakes & Palaces',
-    credit: 'Photo by Pranav Panchal on Unsplash',
+    src: 'https://images.unsplash.com/photo-1696027356970-b1527cc0d33c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8TXVubmFyJTIwVGVhJTIwSGlsbHN8ZW58MHwwfHx8MTc4NzY4ODUwM3ww&ixlib=rb-4.1.0&q=75&w=800',
+    alt: 'Tea terraces rolling into the mountains at Munnar',
+    caption: 'Munnar · Tea Hills & Mist',
+    credit: 'Photo by Antony Thomas on Unsplash',
   },
   signup: {
-    src: 'https://images.unsplash.com/photo-1489252614717-e24ec918e368?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8TWFsZGl2ZXMlMjBBdG9sbHN8ZW58MHwwfHx8MTc4ODM2ODYxNXww&ixlib=rb-4.1.0&q=75&w=800',
-    alt: 'Maldives atoll from the air',
+    src: 'https://images.unsplash.com/photo-1681471809562-75f912ac46fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8M3x8TWFsZGl2ZXMlMjBBdG9sbHN8ZW58MHwwfHx8MTc4ODM2ODYxNXww&ixlib=rb-4.1.0&q=75&w=800',
+    alt: 'Turquoise shallows and palms on a Maldives atoll',
     caption: 'Maldives · Atolls & Overwater',
-    credit: 'Photo by Syd Sujuaan on Unsplash',
+    credit: 'Photo by Arun J on Unsplash',
   },
 } as const
 
@@ -29,7 +29,7 @@ export default function AuthHero({ variant }: { variant: keyof typeof HEROES }) 
   const hero = HEROES[variant]
 
   return (
-    <div className="relative h-52 shrink-0">
+    <div className="relative h-60 shrink-0">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={hero.src}
@@ -40,7 +40,7 @@ export default function AuthHero({ variant }: { variant: keyof typeof HEROES }) 
       />
 
       {/* Fades the photo into the page so there's no hard seam above the form. */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/30 to-slate-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/10 to-slate-950" />
 
       <div className="absolute top-6 left-6 flex items-center gap-2">
         <span className="text-2xl">🦜</span>
