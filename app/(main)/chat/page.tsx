@@ -15,6 +15,21 @@ const AGENT_STAGES = [
 
 const STAGE_DURATION_MS = 900 // purely cosmetic pacing for the staged animation
 
+// Each message is parsed on its own — lib/ai.ts sees one message and returns
+// nulls for anything it isn't told. So answering "about 2 lakh" to a follow-up
+// would otherwise wipe the destination and dates from the previous turn.
+// Merging here keeps the conversation additive while leaving the parser alone:
+// a stated value always wins, a null leaves what we already knew in place.
+function mergeParse(prev: ParsedTrip | null, next: ParsedTrip): ParsedTrip {
+  if (!prev) return next
+  return {
+    destination: next.destination ?? prev.destination,
+    duration_days: next.duration_days ?? prev.duration_days,
+    budget_inr: next.budget_inr ?? prev.budget_inr,
+    travelers: next.travelers ?? prev.travelers,
+  }
+}
+
 function ChatPageInner() {
   const searchParams = useSearchParams()
 
@@ -28,6 +43,9 @@ function ChatPageInner() {
   const [stageIndex, setStageIndex] = useState(0)
   const [error, setError] = useState<string | null>(null)
   const [result, setResult] = useState<ParsedTrip | null>(null)
+  // What the traveller actually said, so the thread reads like a conversation
+  // instead of leaving their words stranded in the input box.
+  const [said, setSaid] = useState<string[]>([])
   const stageTimer = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const { setParsedTrip } = useTrip()
@@ -39,6 +57,15 @@ function ChatPageInner() {
   // Voyagent can name any city on earth; only these have a catalogue behind them.
   const matchedCity = matchCity(result?.destination)
 
+  const missing = result
+    ? ([
+        !result.destination && 'destination',
+        !result.duration_days && 'dates',
+        !result.budget_inr && 'budget',
+        !result.travelers && 'party size',
+      ].filter(Boolean) as string[])
+    : []
+
   useEffect(() => {
     return () => {
       if (stageTimer.current) clearInterval(stageTimer.current)
@@ -47,6 +74,7 @@ function ChatPageInner() {
 
   function resetConversation() {
     setMessage('')
+    setSaid([])
     setResult(null)
     setError(null)
     setLoading(false)
@@ -57,8 +85,12 @@ function ChatPageInner() {
   async function handleSend() {
     if (!message.trim() || loading) return
 
+    const sent = message.trim()
+    setSaid((prev) => [...prev, sent])
+    // Clearing the box is what makes a follow-up possible — it used to keep the
+    // previous message, so answering a question meant editing the old one.
+    setMessage('')
     setError(null)
-    setResult(null)
     setLoading(true)
     setStageIndex(0)
 
@@ -72,7 +104,7 @@ function ChatPageInner() {
       const res = await fetch('/api/parse-trip', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message: sent }),
       })
 
       if (!res.ok) throw new Error('Trip parsing failed')
@@ -83,8 +115,9 @@ function ChatPageInner() {
       const elapsed = STAGE_DURATION_MS * AGENT_STAGES.length
       await new Promise((r) => setTimeout(r, Math.max(0, elapsed - 0)))
 
-      setResult(parsed)
-      setParsedTrip(parsed)
+      const merged = mergeParse(result, parsed)
+      setResult(merged)
+      setParsedTrip(merged)
     } catch {
       setError("Voyagent couldn't quite catch that — try rephrasing with destination, days, budget, and travelers.")
     } finally {
@@ -185,6 +218,15 @@ function ChatPageInner() {
           <span>Tell me where, when, and your budget — I&apos;ll stream you a real plan.</span>
         </div>
 
+        {said.map((text, i) => (
+          <div
+            key={`${i}-${text}`}
+            className="ml-auto rounded-2xl bg-indigo-500/15 border border-indigo-800/60 px-4 py-3 text-sm leading-relaxed max-w-[85%]"
+          >
+            {text}
+          </div>
+        ))}
+
         {loading && (
           <div className="rounded-2xl bg-slate-900/70 border border-slate-800 px-4 py-3 text-sm text-indigo-300 max-w-[85%] flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
@@ -222,6 +264,13 @@ function ChatPageInner() {
             {/* Somewhere Voyagent's parse can actually land. This writes a real
                 trip with its days already laid out, so it appears in Trips and
                 survives a refresh — the old flow held it in memory only. */}
+            {missing.length > 0 && (
+              <p className="text-xs text-slate-400 leading-relaxed pt-1">
+                Still need your {missing.join(' and ')} — just tell me below and I&apos;ll add it to
+                this.
+              </p>
+            )}
+
             {matchedCity && (
               <button
                 onClick={createTrip}
