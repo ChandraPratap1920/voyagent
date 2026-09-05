@@ -92,6 +92,22 @@ export default function AccountPage() {
             </Link>
           </div>
 
+          <div className="px-6 mb-6">
+            <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-3">
+              Support
+            </h2>
+            <Link
+              href="/support"
+              className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3.5"
+            >
+              <span className="flex items-center gap-3 text-sm font-medium">
+                <span className="text-lg leading-none">💬</span>
+                Help &amp; Support
+              </span>
+              <span className="text-slate-500">›</span>
+            </Link>
+          </div>
+
           <div className="px-6">
             <button
               onClick={handleLogout}

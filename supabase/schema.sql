@@ -125,3 +125,24 @@ create policy "Users manage own trip items" on trip_items
   ) with check (
     exists (select 1 from trips t where t.id = trip_items.trip_id and t.user_id = auth.uid())
   );
+
+-- Support tickets raised from /support. Deliberately write-only from the app's
+-- point of view: a user can raise a ticket and read their own history, but
+-- can't edit or close one — resolving is a support-side action, so there are
+-- no update/delete policies at all.
+create table if not exists support_tickets (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid references auth.users(id) on delete cascade,
+  category text not null check (category in ('booking', 'planning', 'account', 'bug', 'other')),
+  subject text not null,
+  message text not null,
+  status text default 'open' check (status in ('open', 'resolved')),
+  created_at timestamptz default now()
+);
+
+alter table support_tickets enable row level security;
+
+create policy "Users can view own support tickets" on support_tickets
+  for select using (auth.uid() = user_id);
+create policy "Users can raise own support tickets" on support_tickets
+  for insert with check (auth.uid() = user_id);
