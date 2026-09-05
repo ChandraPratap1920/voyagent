@@ -8,6 +8,7 @@ const TABS = [
   { href: '/home', label: 'Home', icon: '🏠' },
   { href: '/explore', label: 'Explore', icon: '🧭' },
   { href: '/trips', label: 'Trips', icon: '🗓️' },
+  { href: '/transport', label: 'Transport', icon: '🚆' },
   // The Plan tab carries the brand mark rather than an emoji.
   { href: '/chat', label: 'Plan', icon: null },
 ] as const
@@ -16,7 +17,7 @@ export default function BottomNav() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-slate-900/95 backdrop-blur border-t border-slate-800 px-3 py-2 flex items-center justify-around z-40">
+    <nav className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-slate-900/95 backdrop-blur border-t border-slate-800 px-1 py-2 flex items-center justify-around z-40">
       {TABS.map((tab) => {
         // /results and /account aren't tabs themselves, but /chat and /trips
         // should stay highlighted while you're inside their sub-pages.
@@ -24,12 +25,13 @@ export default function BottomNav() {
           pathname === tab.href ||
           (tab.href === '/chat' && pathname.startsWith('/chat')) ||
           (tab.href === '/trips' && pathname.startsWith('/trips')) ||
-          (tab.href === '/explore' && pathname.startsWith('/explore'))
+          (tab.href === '/explore' && pathname.startsWith('/explore')) ||
+          (tab.href === '/transport' && pathname.startsWith('/transport'))
         return (
           <Link
             key={tab.href}
             href={tab.href}
-            className={`flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl transition-colors ${
+            className={`flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl transition-colors ${
               isActive ? 'text-lime-400' : 'text-slate-500'
             }`}
           >
@@ -40,7 +42,7 @@ export default function BottomNav() {
               // horizontal mark and needs the room to stay legible at nav size.
               <Logo className="w-7 h-5" />
             )}
-            <span className="text-xs font-medium">{tab.label}</span>
+            <span className="text-[11px] font-medium">{tab.label}</span>
           </Link>
         )
       })}
