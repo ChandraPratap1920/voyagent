@@ -211,6 +211,17 @@ export default function TripPlanner({ tripId }: { tripId: string }) {
             {trip.start_date ? ` · from ${trip.start_date}` : ''}
           </p>
         </div>
+
+        {/* The other half of the chat/trips link: Vito can start a trip, and
+            from inside one you can go back and ask about the same city. */}
+        <Link
+          href={`/chat?dest=${encodeURIComponent(trip.destinations[0] ?? '')}`}
+          aria-label="Ask Vito about this trip"
+          className="flex items-center gap-1.5 rounded-full bg-slate-900 border border-slate-800 px-3 py-1.5 shrink-0"
+        >
+          <span className="text-sm leading-none">🦜</span>
+          <span className="text-xs font-medium text-slate-300">Ask Vito</span>
+        </Link>
       </div>
 
       {/* Progress + budget: the two nudges that bring people back */}
