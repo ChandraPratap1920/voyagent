@@ -20,6 +20,7 @@ export default function PaymentPage() {
     () => typeof document !== 'undefined' && document.getElementById('razorpay-checkout-js') !== null
   )
   const [paying, setPaying] = useState(false)
+  const [savingTrip, setSavingTrip] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   // If someone lands here without a full selection (e.g. a page refresh,
@@ -46,6 +47,59 @@ export default function PaymentPage() {
 
   const breakdown = budgetBreakdown()
   const totalInr = Math.round(breakdown.total)
+
+  // The whole selection lives in TripContext, which is memory only — so the
+  // only exits from this screen were "pay" or "lose it". Saving writes a real
+  // trip with the chosen stay already on every night, which is also the answer
+  // for someone who isn't ready to pay yet.
+  async function saveToTrips() {
+    if (savingTrip) return
+    const destination = trip.destination
+    const hotel = selectedHotel
+    if (!destination || !hotel) return
+
+    setSavingTrip(true)
+    setError(null)
+
+    const nights = Math.min(Math.max(trip.duration_days ?? 3, 1), 30)
+
+    try {
+      const res = await fetch('/api/trips', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          legs: [{ destination, nights }],
+          title: `${nights}-day ${destination} trip`,
+          travelers: trip.travelers ?? 1,
+          budget_inr: trip.budget_inr ?? null,
+        }),
+      })
+
+      const data = await res.json().catch(() => null)
+      if (!res.ok) {
+        setError(data?.error ?? 'Could not save this to Trips — please try again.')
+        return
+      }
+
+      // Carry the chosen stay onto every night, so the saved trip opens with
+      // something in it rather than a row of empty days.
+      await Promise.all(
+        Array.from({ length: nights }, (_, i) => i + 1).map((day) =>
+          fetch(`/api/trips/${data.id}/items`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ day_number: day, item_type: 'hotel', item_id: hotel.id }),
+          })
+        )
+      )
+
+      router.push(`/trips/${data.id}`)
+    } catch {
+      setError('Could not save this to Trips — please try again.')
+    } finally {
+      setSavingTrip(false)
+    }
+  }
 
   async function handlePay() {
     setError(null)
@@ -151,6 +205,21 @@ export default function PaymentPage() {
         <p className="text-center text-slate-500 text-xs mt-3">
           Test mode — no real money is charged.
         </p>
+
+        <div className="mt-6 pt-5 border-t border-slate-800">
+          <button
+            onClick={saveToTrips}
+            disabled={savingTrip || paying}
+            className="w-full rounded-full border border-slate-700 text-slate-300 font-medium py-3 disabled:opacity-50"
+          >
+            {savingTrip ? 'Saving…' : 'Not ready? Save to Trips'}
+          </button>
+          <p className="text-center text-slate-500 text-xs mt-3 leading-relaxed">
+            Keeps your dates and {selectedHotel.name} on every night, so you can decide later.
+            Flight options stay under <span className="text-slate-400">Getting there</span> in the
+            trip.
+          </p>
+        </div>
       </div>
     </main>
   )
