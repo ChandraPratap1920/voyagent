@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import TripBooking from '@/components/TripBooking'
+import GettingThere from '@/components/GettingThere'
 import PickerRow from '@/components/PickerRow'
 import { CatalogItem, ItemKind, SAVED_TYPE, SavedType, detailHref, itemPriceLabel } from '@/lib/catalog'
 
@@ -271,6 +272,13 @@ export default function TripPlanner({ tripId }: { tripId: string }) {
           onBooked={loadTrip}
         />
       </div>
+
+      {/* How you reach the trip, before what you do once you're in it. */}
+      {trip.destinations[0] && (
+        <div className="px-6 pt-3">
+          <GettingThere destination={trip.destinations[0]} />
+        </div>
+      )}
 
       {/* Days */}
       <div className="px-6 pt-5 space-y-4">

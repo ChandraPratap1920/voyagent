@@ -1,0 +1,832 @@
+{
+  "Goa": {
+    "trains": [
+      {
+        "id": "train-10111",
+        "number": "10111",
+        "name": "Konkan Kanya Express",
+        "from": "Mumbai CSMT",
+        "to_station": "MAO — Madgaon",
+        "departure": "23:05",
+        "duration_mins": 690,
+        "classes": "SL / 3A / 2A",
+        "price_inr": 640,
+        "note": "Overnight down the Konkan coast — the classic way in."
+      },
+      {
+        "id": "train-10103",
+        "number": "10103",
+        "name": "Mandovi Express",
+        "from": "Mumbai CSMT",
+        "to_station": "MAO — Madgaon",
+        "departure": "07:10",
+        "duration_mins": 720,
+        "classes": "SL / 3A / 2A / CC",
+        "price_inr": 680,
+        "note": "Daytime run with the best views of the Konkan ghats."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-paulo-travels-mumbai",
+        "operator": "Paulo Travels",
+        "type": "Volvo A/C Sleeper",
+        "from": "Mumbai",
+        "to_stop": "Mapusa",
+        "departure": "20:30",
+        "duration_mins": 720,
+        "price_inr": 1450,
+        "note": "Overnight sleeper, drops you close to the north beaches."
+      },
+      {
+        "id": "bus-vrl-travels-bengaluru",
+        "operator": "VRL Travels",
+        "type": "Multi-Axle Sleeper",
+        "from": "Bengaluru",
+        "to_stop": "Panaji",
+        "departure": "19:00",
+        "duration_mins": 780,
+        "price_inr": 1600,
+        "note": "Overnight via Hubballi."
+      }
+    ],
+    "transfer": {
+      "hub": "GOI — Dabolim / GOX — Mopa",
+      "options": [
+        {
+          "mode": "Airport taxi (sedan)",
+          "price_inr": 1200,
+          "note": "About 40 mins to the north beaches from Dabolim."
+        },
+        {
+          "mode": "GoaMiles app cab",
+          "price_inr": 900,
+          "note": "Government-backed app — usually cheaper than the prepaid counter."
+        },
+        {
+          "mode": "Scooter rental (per day)",
+          "price_inr": 400,
+          "note": "How most people actually get around Goa."
+        }
+      ]
+    }
+  },
+  "Manali": {
+    "trains": [
+      {
+        "id": "train-12011",
+        "number": "12011",
+        "name": "Kalka Shatabdi",
+        "from": "Delhi",
+        "to_station": "KLK — Kalka",
+        "departure": "07:40",
+        "duration_mins": 265,
+        "classes": "CC / EC",
+        "price_inr": 800,
+        "note": "No railway reaches Manali — Kalka is the nearest useful railhead, then about 8 hrs by road."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-hrtc-delhi",
+        "operator": "HRTC",
+        "type": "Volvo A/C",
+        "from": "Delhi",
+        "to_stop": "Manali Bus Stand",
+        "departure": "18:30",
+        "duration_mins": 780,
+        "price_inr": 1400,
+        "note": "Overnight from Kashmere Gate ISBT — the standard route."
+      },
+      {
+        "id": "bus-zingbus-chandigarh",
+        "operator": "Zingbus",
+        "type": "Semi-Sleeper A/C",
+        "from": "Chandigarh",
+        "to_stop": "Manali Bus Stand",
+        "departure": "21:00",
+        "duration_mins": 540,
+        "price_inr": 1100,
+        "note": "Shorter overnight hop if you're already in Chandigarh."
+      }
+    ],
+    "transfer": {
+      "hub": "KUU — Bhuntar (Kullu)",
+      "options": [
+        {
+          "mode": "Airport taxi",
+          "price_inr": 1800,
+          "note": "About 50 km, roughly 1.5 hrs up the valley."
+        },
+        {
+          "mode": "HRTC local bus",
+          "price_inr": 120,
+          "note": "Frequent, slow, and very cheap."
+        },
+        {
+          "mode": "Bike rental (per day)",
+          "price_inr": 800,
+          "note": "Popular for Solang and the Atal Tunnel run."
+        }
+      ]
+    }
+  },
+  "Alleppey": {
+    "trains": [
+      {
+        "id": "train-16042",
+        "number": "16042",
+        "name": "Alleppey Express",
+        "from": "Chennai Central",
+        "to_station": "ALLP — Alappuzha",
+        "departure": "20:20",
+        "duration_mins": 840,
+        "classes": "SL / 3A / 2A",
+        "price_inr": 710,
+        "note": "Overnight across Tamil Nadu into the backwaters."
+      },
+      {
+        "id": "train-16303",
+        "number": "16303",
+        "name": "Vanchinad Express",
+        "from": "Ernakulam Jn",
+        "to_station": "ALLP — Alappuzha",
+        "departure": "17:20",
+        "duration_mins": 80,
+        "classes": "CC / 2S",
+        "price_inr": 60,
+        "note": "Short hop if you're coming via Kochi."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-ksrtc-bengaluru",
+        "operator": "KSRTC",
+        "type": "Super Deluxe A/C",
+        "from": "Bengaluru",
+        "to_stop": "Alappuzha KSRTC",
+        "departure": "19:30",
+        "duration_mins": 720,
+        "price_inr": 1250,
+        "note": "Overnight via Salem and Thrissur."
+      },
+      {
+        "id": "bus-ksrtc-kochi",
+        "operator": "KSRTC",
+        "type": "Fast Passenger",
+        "from": "Kochi",
+        "to_stop": "Alappuzha KSRTC",
+        "departure": "06:00",
+        "duration_mins": 105,
+        "price_inr": 75,
+        "note": "Runs roughly every 20 minutes through the day."
+      }
+    ],
+    "transfer": {
+      "hub": "COK — Kochi International",
+      "options": [
+        {
+          "mode": "Airport taxi",
+          "price_inr": 2200,
+          "note": "About 85 km, roughly 2 hrs to the boat jetty."
+        },
+        {
+          "mode": "Airport bus + local bus",
+          "price_inr": 180,
+          "note": "Slower, but runs all day."
+        },
+        {
+          "mode": "Auto to the houseboat jetty",
+          "price_inr": 80,
+          "note": "Once you're in town, everything is 10 minutes away."
+        }
+      ]
+    }
+  },
+  "Jaipur": {
+    "trains": [
+      {
+        "id": "train-12015",
+        "number": "12015",
+        "name": "Ajmer Shatabdi",
+        "from": "Delhi",
+        "to_station": "JP — Jaipur Jn",
+        "departure": "06:05",
+        "duration_mins": 270,
+        "classes": "CC / EC",
+        "price_inr": 880,
+        "note": "Fastest and most comfortable — breakfast included."
+      },
+      {
+        "id": "train-12985",
+        "number": "12985",
+        "name": "Delhi–Jaipur Double Decker",
+        "from": "Delhi",
+        "to_station": "JP — Jaipur Jn",
+        "departure": "17:35",
+        "duration_mins": 280,
+        "classes": "CC",
+        "price_inr": 640,
+        "note": "Evening run, good value."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-rsrtc-delhi",
+        "operator": "RSRTC",
+        "type": "Volvo A/C",
+        "from": "Delhi",
+        "to_stop": "Sindhi Camp",
+        "departure": "07:00",
+        "duration_mins": 330,
+        "price_inr": 850,
+        "note": "Frequent through the day on the Jaipur expressway."
+      },
+      {
+        "id": "bus-zingbus-delhi",
+        "operator": "Zingbus",
+        "type": "A/C Sleeper",
+        "from": "Delhi",
+        "to_stop": "Sindhi Camp",
+        "departure": "23:30",
+        "duration_mins": 360,
+        "price_inr": 700,
+        "note": "Overnight — arrive in time for the forts opening."
+      }
+    ],
+    "transfer": {
+      "hub": "JAI — Jaipur International",
+      "options": [
+        {
+          "mode": "Prepaid taxi",
+          "price_inr": 450,
+          "note": "About 13 km to the old city."
+        },
+        {
+          "mode": "App cab",
+          "price_inr": 350,
+          "note": "Ola and Uber both operate here."
+        },
+        {
+          "mode": "Auto-rickshaw",
+          "price_inr": 250,
+          "note": "Agree the fare before you get in."
+        }
+      ]
+    }
+  },
+  "Udaipur": {
+    "trains": [
+      {
+        "id": "train-12963",
+        "number": "12963",
+        "name": "Mewar Express",
+        "from": "Delhi H. Nizamuddin",
+        "to_station": "UDZ — Udaipur City",
+        "departure": "19:00",
+        "duration_mins": 720,
+        "classes": "SL / 3A / 2A",
+        "price_inr": 720,
+        "note": "Overnight, arrives early enough for sunrise over the lake."
+      },
+      {
+        "id": "train-20473",
+        "number": "20473",
+        "name": "Chetak Express",
+        "from": "Delhi Sarai Rohilla",
+        "to_station": "UDZ — Udaipur City",
+        "departure": "19:40",
+        "duration_mins": 750,
+        "classes": "SL / 3A / 2A",
+        "price_inr": 690,
+        "note": "The other overnight option."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-rsrtc-ahmedabad",
+        "operator": "RSRTC",
+        "type": "Volvo A/C",
+        "from": "Ahmedabad",
+        "to_stop": "Udaipur Bus Stand",
+        "departure": "08:00",
+        "duration_mins": 300,
+        "price_inr": 550,
+        "note": "Easy daytime run through the Aravallis."
+      },
+      {
+        "id": "bus-zingbus-jaipur",
+        "operator": "Zingbus",
+        "type": "A/C Sleeper",
+        "from": "Jaipur",
+        "to_stop": "Udaipur Bus Stand",
+        "departure": "23:00",
+        "duration_mins": 420,
+        "price_inr": 800,
+        "note": "Overnight from Jaipur."
+      }
+    ],
+    "transfer": {
+      "hub": "UDR — Maharana Pratap",
+      "options": [
+        {
+          "mode": "Prepaid taxi",
+          "price_inr": 700,
+          "note": "About 22 km to the lake palaces."
+        },
+        {
+          "mode": "App cab",
+          "price_inr": 550,
+          "note": "Ola operates from the terminal."
+        }
+      ]
+    }
+  },
+  "Rishikesh": {
+    "trains": [
+      {
+        "id": "train-12017",
+        "number": "12017",
+        "name": "Dehradun Shatabdi",
+        "from": "Delhi",
+        "to_station": "HW — Haridwar Jn",
+        "departure": "06:45",
+        "duration_mins": 270,
+        "classes": "CC / EC",
+        "price_inr": 770,
+        "note": "Haridwar is the practical railhead — Rishikesh is 25 km further."
+      },
+      {
+        "id": "train-19031",
+        "number": "19031",
+        "name": "Yoga Express",
+        "from": "Ahmedabad",
+        "to_station": "HW — Haridwar Jn",
+        "departure": "23:00",
+        "duration_mins": 1140,
+        "classes": "SL / 3A / 2A",
+        "price_inr": 860,
+        "note": "Long haul, but it runs straight through."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-uksrtc-delhi",
+        "operator": "UKSRTC",
+        "type": "Volvo A/C",
+        "from": "Delhi",
+        "to_stop": "Rishikesh ISBT",
+        "departure": "22:00",
+        "duration_mins": 420,
+        "price_inr": 900,
+        "note": "Overnight from Kashmere Gate."
+      },
+      {
+        "id": "bus-zingbus-delhi",
+        "operator": "Zingbus",
+        "type": "A/C Seater",
+        "from": "Delhi",
+        "to_stop": "Tapovan",
+        "departure": "23:15",
+        "duration_mins": 390,
+        "price_inr": 750,
+        "note": "Drops closer to the Tapovan cafés and ashrams."
+      }
+    ],
+    "transfer": {
+      "hub": "DED — Jolly Grant, Dehradun",
+      "options": [
+        {
+          "mode": "Airport taxi",
+          "price_inr": 900,
+          "note": "About 20 km, roughly 35 mins."
+        },
+        {
+          "mode": "Shared vikram",
+          "price_inr": 40,
+          "note": "Local shared autos run the Haridwar–Rishikesh road constantly."
+        }
+      ]
+    }
+  },
+  "Munnar": {
+    "trains": [
+      {
+        "id": "train-12626",
+        "number": "12626",
+        "name": "Kerala Express",
+        "from": "Delhi",
+        "to_station": "ERS — Ernakulam Jn",
+        "departure": "11:25",
+        "duration_mins": 2760,
+        "classes": "SL / 3A / 2A",
+        "price_inr": 1450,
+        "note": "No railway reaches Munnar — Ernakulam is the nearest junction, then about 4 hrs by road."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-ksrtc-kochi",
+        "operator": "KSRTC",
+        "type": "Fast Passenger",
+        "from": "Kochi",
+        "to_stop": "Munnar Bus Stand",
+        "departure": "06:30",
+        "duration_mins": 270,
+        "price_inr": 180,
+        "note": "The tea-estate road climb is worth a window seat."
+      },
+      {
+        "id": "bus-ksrtc-bengaluru",
+        "operator": "KSRTC",
+        "type": "Super Fast A/C",
+        "from": "Bengaluru",
+        "to_stop": "Munnar Bus Stand",
+        "departure": "20:00",
+        "duration_mins": 720,
+        "price_inr": 1100,
+        "note": "Overnight via Coimbatore."
+      }
+    ],
+    "transfer": {
+      "hub": "COK — Kochi International",
+      "options": [
+        {
+          "mode": "Airport taxi",
+          "price_inr": 3200,
+          "note": "About 110 km of hill road, roughly 4 hrs."
+        },
+        {
+          "mode": "KSRTC bus via Aluva",
+          "price_inr": 180,
+          "note": "Cheapest way up, and frequent."
+        }
+      ]
+    }
+  },
+  "Pondicherry": {
+    "trains": [
+      {
+        "id": "train-16115",
+        "number": "16115",
+        "name": "Puducherry Express",
+        "from": "Chennai Egmore",
+        "to_station": "PDY — Puducherry",
+        "departure": "07:45",
+        "duration_mins": 240,
+        "classes": "SL / 2S",
+        "price_inr": 120,
+        "note": "Direct, and cheap enough to be worth it."
+      },
+      {
+        "id": "train-12897",
+        "number": "12897",
+        "name": "Bhubaneswar–Puducherry Express",
+        "from": "Villupuram Jn",
+        "to_station": "PDY — Puducherry",
+        "departure": "14:10",
+        "duration_mins": 50,
+        "classes": "SL / 3A",
+        "price_inr": 45,
+        "note": "Villupuram is the junction most trains actually stop at."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-tnstc-chennai",
+        "operator": "TNSTC",
+        "type": "A/C Seater",
+        "from": "Chennai",
+        "to_stop": "Puducherry Bus Stand",
+        "departure": "08:00",
+        "duration_mins": 210,
+        "price_inr": 300,
+        "note": "Runs along the East Coast Road — the nicest way in."
+      },
+      {
+        "id": "bus-zingbus-bengaluru",
+        "operator": "Zingbus",
+        "type": "A/C Sleeper",
+        "from": "Bengaluru",
+        "to_stop": "Puducherry Bus Stand",
+        "departure": "22:30",
+        "duration_mins": 420,
+        "price_inr": 950,
+        "note": "Overnight via Krishnagiri."
+      }
+    ],
+    "transfer": {
+      "hub": "MAA — Chennai International",
+      "options": [
+        {
+          "mode": "Airport taxi",
+          "price_inr": 3000,
+          "note": "About 150 km down the ECR, roughly 3.5 hrs."
+        },
+        {
+          "mode": "ECR bus from Chennai",
+          "price_inr": 200,
+          "note": "Slower, but it hugs the coast the whole way."
+        }
+      ]
+    }
+  },
+  "Varanasi": {
+    "trains": [
+      {
+        "id": "train-22415",
+        "number": "22415",
+        "name": "Vande Bharat Express",
+        "from": "Delhi",
+        "to_station": "BSB — Varanasi Jn",
+        "departure": "06:00",
+        "duration_mins": 480,
+        "classes": "CC / EC",
+        "price_inr": 1750,
+        "note": "Fastest train on the route."
+      },
+      {
+        "id": "train-12559",
+        "number": "12559",
+        "name": "Shiv Ganga Express",
+        "from": "Delhi",
+        "to_station": "BSB — Varanasi Jn",
+        "departure": "20:10",
+        "duration_mins": 720,
+        "classes": "SL / 3A / 2A",
+        "price_inr": 700,
+        "note": "Overnight — arrive in time for the morning ghats."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-upsrtc-lucknow",
+        "operator": "UPSRTC",
+        "type": "Volvo A/C",
+        "from": "Lucknow",
+        "to_stop": "Varanasi Cantt",
+        "departure": "09:00",
+        "duration_mins": 390,
+        "price_inr": 700,
+        "note": "The most reliable road option into the city."
+      }
+    ],
+    "transfer": {
+      "hub": "VNS — Lal Bahadur Shastri",
+      "options": [
+        {
+          "mode": "Prepaid taxi",
+          "price_inr": 800,
+          "note": "About 25 km — allow an hour in traffic."
+        },
+        {
+          "mode": "App cab",
+          "price_inr": 600,
+          "note": "Uber and Ola both run here."
+        },
+        {
+          "mode": "Auto to Dashashwamedh",
+          "price_inr": 300,
+          "note": "Vehicles can't reach the ghats themselves — the last stretch is on foot."
+        }
+      ]
+    }
+  },
+  "Darjeeling": {
+    "trains": [
+      {
+        "id": "train-12343",
+        "number": "12343",
+        "name": "Darjeeling Mail",
+        "from": "Kolkata Sealdah",
+        "to_station": "NJP — New Jalpaiguri",
+        "departure": "22:05",
+        "duration_mins": 600,
+        "classes": "SL / 3A / 2A",
+        "price_inr": 780,
+        "note": "Overnight to NJP, the railhead for the whole hill region."
+      },
+      {
+        "id": "train-52541",
+        "number": "52541",
+        "name": "DHR Toy Train",
+        "from": "New Jalpaiguri",
+        "to_station": "DJ — Darjeeling",
+        "departure": "10:00",
+        "duration_mins": 420,
+        "classes": "1st / 2nd",
+        "price_inr": 1500,
+        "note": "The UNESCO-listed narrow gauge climb — slow, and the point of the journey."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-nbstc-kolkata",
+        "operator": "NBSTC",
+        "type": "A/C Seater",
+        "from": "Kolkata",
+        "to_stop": "Siliguri Tenzing Norgay",
+        "departure": "19:00",
+        "duration_mins": 720,
+        "price_inr": 900,
+        "note": "Overnight to Siliguri, then a shared jeep up the hill."
+      }
+    ],
+    "transfer": {
+      "hub": "IXB — Bagdogra",
+      "options": [
+        {
+          "mode": "Shared jeep",
+          "price_inr": 350,
+          "note": "About 70 km and 3 hrs of switchbacks — how locals travel."
+        },
+        {
+          "mode": "Private taxi",
+          "price_inr": 2800,
+          "note": "Same road, on your own schedule."
+        },
+        {
+          "mode": "Toy train from NJP",
+          "price_inr": 1500,
+          "note": "Seven hours, and worth every one of them."
+        }
+      ]
+    }
+  },
+  "Agra": {
+    "trains": [
+      {
+        "id": "train-12049",
+        "number": "12049",
+        "name": "Gatimaan Express",
+        "from": "Delhi H. Nizamuddin",
+        "to_station": "AGC — Agra Cantt",
+        "departure": "08:10",
+        "duration_mins": 100,
+        "classes": "CC / EC",
+        "price_inr": 785,
+        "note": "India's fastest train — Delhi to Agra before mid-morning."
+      },
+      {
+        "id": "train-12280",
+        "number": "12280",
+        "name": "Taj Express",
+        "from": "Delhi H. Nizamuddin",
+        "to_station": "AGC — Agra Cantt",
+        "departure": "07:00",
+        "duration_mins": 150,
+        "classes": "CC / 2S",
+        "price_inr": 200,
+        "note": "Cheaper and only an hour slower."
+      }
+    ],
+    "buses": [
+      {
+        "id": "bus-upsrtc-delhi",
+        "operator": "UPSRTC",
+        "type": "Volvo A/C",
+        "from": "Delhi",
+        "to_stop": "Agra ISBT",
+        "departure": "07:30",
+        "duration_mins": 240,
+        "price_inr": 600,
+        "note": "Down the Yamuna Expressway from Sarai Kale Khan."
+      }
+    ],
+    "transfer": {
+      "hub": "AGC — Agra (Kheria)",
+      "options": [
+        {
+          "mode": "Taxi from Agra Cantt",
+          "price_inr": 250,
+          "note": "Most visitors arrive by train — Agra's airport has very limited service."
+        },
+        {
+          "mode": "E-rickshaw to the Taj",
+          "price_inr": 100,
+          "note": "Petrol vehicles aren't allowed within 500 m of the monument."
+        }
+      ]
+    }
+  },
+  "Bali": {
+    "trains": [],
+    "buses": [],
+    "transfer": {
+      "hub": "DPS — Ngurah Rai, Denpasar",
+      "options": [
+        {
+          "mode": "Airport taxi to Seminyak",
+          "price_inr": 1200,
+          "note": "About 40 mins depending on traffic."
+        },
+        {
+          "mode": "Grab / Gojek",
+          "price_inr": 800,
+          "note": "Cheaper, but pickup is restricted at the terminal — walk out to the road."
+        },
+        {
+          "mode": "Private driver (full day)",
+          "price_inr": 2800,
+          "note": "The usual way to see the island — around 10 hrs."
+        }
+      ]
+    }
+  },
+  "Bangkok": {
+    "trains": [],
+    "buses": [],
+    "transfer": {
+      "hub": "BKK — Suvarnabhumi",
+      "options": [
+        {
+          "mode": "Airport Rail Link to Phaya Thai",
+          "price_inr": 110,
+          "note": "30 mins and it skips the traffic entirely."
+        },
+        {
+          "mode": "Metered taxi",
+          "price_inr": 900,
+          "note": "Use the public rank downstairs, not the touts."
+        },
+        {
+          "mode": "Grab",
+          "price_inr": 1100,
+          "note": "Fixed fare, useful with luggage."
+        }
+      ]
+    }
+  },
+  "Dubai": {
+    "trains": [],
+    "buses": [],
+    "transfer": {
+      "hub": "DXB — Dubai International",
+      "options": [
+        {
+          "mode": "Dubai Metro (Red Line)",
+          "price_inr": 180,
+          "note": "Runs straight from Terminals 1 and 3 into the city."
+        },
+        {
+          "mode": "Airport taxi",
+          "price_inr": 1600,
+          "note": "About 20 mins to Downtown."
+        },
+        {
+          "mode": "Careem",
+          "price_inr": 1400,
+          "note": "The locally dominant ride app."
+        }
+      ]
+    }
+  },
+  "Maldives": {
+    "trains": [],
+    "buses": [],
+    "transfer": {
+      "hub": "MLE — Velana International",
+      "options": [
+        {
+          "mode": "Speedboat to a nearby atoll",
+          "price_inr": 4500,
+          "note": "About 30 mins — most resorts arrange this for you."
+        },
+        {
+          "mode": "Seaplane to the outer atolls",
+          "price_inr": 22000,
+          "note": "Roughly 45 mins, and daylight hours only."
+        },
+        {
+          "mode": "Public ferry to Malé",
+          "price_inr": 40,
+          "note": "For the capital rather than a resort island."
+        }
+      ]
+    }
+  },
+  "Colombo": {
+    "trains": [],
+    "buses": [],
+    "transfer": {
+      "hub": "CMB — Bandaranaike International",
+      "options": [
+        {
+          "mode": "Expressway taxi",
+          "price_inr": 2200,
+          "note": "About 45 mins into central Colombo."
+        },
+        {
+          "mode": "Airport shuttle bus",
+          "price_inr": 120,
+          "note": "Slow but very cheap."
+        },
+        {
+          "mode": "PickMe app",
+          "price_inr": 1800,
+          "note": "Sri Lanka's own ride-hailing app."
+        }
+      ]
+    }
+  }
+}
