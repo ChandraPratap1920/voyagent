@@ -85,14 +85,6 @@ export default function TransportPage() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/40 px-4 py-4 mb-6">
-          <p className="text-sm font-semibold mb-2">Already inside your trips</p>
-          <p className="text-xs text-slate-400 leading-relaxed">
-            Open any trip and &ldquo;Getting there&rdquo; shows the same options scoped to that
-            destination — so transport is part of the plan rather than a separate errand.
-          </p>
-        </div>
-
         <h2 className="text-sm font-semibold text-slate-400 uppercase tracking-wide mb-3">
           Where this goes next
         </h2>
