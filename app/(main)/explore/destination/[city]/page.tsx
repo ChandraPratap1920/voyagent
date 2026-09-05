@@ -3,6 +3,7 @@ import Link from 'next/link'
 import destinations from '@/data/destinations.json'
 import DestinationBrowser from './DestinationBrowser'
 import BackButton from '@/components/BackButton'
+import Logo from '@/components/Logo'
 
 // Only 4 curated cities, so prerender all of them at build time.
 export function generateStaticParams() {
@@ -76,9 +77,10 @@ export default async function DestinationPage({ params }: { params: Promise<{ ci
         </Link>
         <Link
           href={`/chat?dest=${encodeURIComponent(destination.name)}`}
-          className="block w-full text-center rounded-full border border-slate-700 text-slate-300 font-medium py-3"
+          className="flex items-center justify-center gap-2 w-full rounded-full border border-slate-700 text-slate-300 font-medium py-3"
         >
-          Ask Voyagent to plan it 🦜
+          <Logo className="w-5 h-5" />
+          Ask Voyagent to plan it
         </Link>
       </div>
 

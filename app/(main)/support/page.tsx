@@ -5,6 +5,7 @@ import destinations from '@/data/destinations.json'
 import hotels from '@/data/hotels.json'
 import restaurants from '@/data/restaurants.json'
 import experiences from '@/data/experiences.json'
+import Logo from '@/components/Logo'
 
 // Help & Support. A server component so the FAQ costs no JavaScript — only the
 // contact form below it is interactive.
@@ -83,7 +84,7 @@ export default function SupportPage() {
             href="/chat"
             className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3"
           >
-            <p className="text-lg leading-none mb-1.5">🦜</p>
+            <Logo className="w-6 h-6 mb-1.5" />
             <p className="text-sm font-medium">Ask Voyagent</p>
             <p className="text-xs text-slate-500">Trip questions</p>
           </Link>

@@ -5,6 +5,7 @@ import { useTrip, ParsedTrip } from '@/context/TripContext'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { matchCity, CITY_NAMES } from '@/lib/destinations'
+import Logo from '@/components/Logo'
 
 const AGENT_STAGES = [
   'Research Agent scouting options…',
@@ -144,8 +145,8 @@ function ChatPageInner() {
           ←
         </Link>
 
-        <div className="w-11 h-11 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-xl shrink-0">
-          🦜
+        <div className="w-11 h-11 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0">
+          <Logo className="w-7 h-7" />
         </div>
         <div className="min-w-0 flex-1">
           <h1 className="font-bold text-lg leading-tight">Voyagent</h1>
@@ -179,8 +180,9 @@ function ChatPageInner() {
       </div>
 
       <div className="flex-1 px-6 space-y-4 overflow-y-auto pb-4">
-        <div className="rounded-2xl bg-slate-900/70 border border-slate-800 px-4 py-3 text-sm leading-relaxed max-w-[85%]">
-          🦜 Tell me where, when, and your budget — I&apos;ll stream you a real plan.
+        <div className="rounded-2xl bg-slate-900/70 border border-slate-800 px-4 py-3 text-sm leading-relaxed max-w-[85%] flex gap-2.5">
+          <Logo className="w-5 h-5 mt-0.5" />
+          <span>Tell me where, when, and your budget — I&apos;ll stream you a real plan.</span>
         </div>
 
         {loading && (

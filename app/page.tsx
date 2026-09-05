@@ -3,6 +3,7 @@ import destinations from '@/data/destinations.json'
 import experiences from '@/data/experiences.json'
 import hotels from '@/data/hotels.json'
 import restaurants from '@/data/restaurants.json'
+import Logo from '@/components/Logo'
 
 // Public landing page — the first thing anyone opening the deployed URL sees.
 //
@@ -86,7 +87,7 @@ export default function Landing() {
     <main className="min-h-screen flex flex-col max-w-md mx-auto w-full">
       <div className="px-6 pt-10">
         <div className="flex items-center gap-2 mb-8">
-          <span className="text-2xl">🦜</span>
+          <Logo className="w-8 h-8" />
           <span className="font-bold text-lg tracking-tight">Voyagent</span>
         </div>
 

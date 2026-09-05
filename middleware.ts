@@ -41,5 +41,11 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|api).*)'],
+  // Static assets under public/ were never excluded here, so every request for
+  // one was redirected to /login for a signed-out visitor — which broke the
+  // logo and the favicon on the landing and auth pages. They're public files
+  // by definition, so they skip the auth check by extension.
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|api|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|avif|woff2?|ttf|otf)$).*)',
+  ],
 }

@@ -10,6 +10,8 @@
 // because these pages are client components — importing the dataset here would
 // ship the whole catalogue to the browser just to pick one photo.
 
+import Logo from '@/components/Logo'
+
 const HEROES = {
   login: {
     src: 'https://images.unsplash.com/photo-1696027356970-b1527cc0d33c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDQyMDM2fDB8MXxzZWFyY2h8MXx8TXVubmFyJTIwVGVhJTIwSGlsbHN8ZW58MHwwfHx8MTc4NzY4ODUwM3ww&ixlib=rb-4.1.0&q=75&w=800',
@@ -43,7 +45,7 @@ export default function AuthHero({ variant }: { variant: keyof typeof HEROES }) 
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-slate-950/10 to-slate-950" />
 
       <div className="absolute top-6 left-6 flex items-center gap-2">
-        <span className="text-2xl">🦜</span>
+        <Logo className="w-8 h-8" />
         <span className="font-bold tracking-tight">Voyagent</span>
       </div>
 

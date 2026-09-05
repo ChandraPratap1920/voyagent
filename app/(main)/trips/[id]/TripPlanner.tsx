@@ -7,6 +7,7 @@ import TripBooking from '@/components/TripBooking'
 import GettingThere from '@/components/GettingThere'
 import PickerRow from '@/components/PickerRow'
 import { CatalogItem, ItemKind, SAVED_TYPE, SavedType, detailHref, itemPriceLabel } from '@/lib/catalog'
+import Logo from '@/components/Logo'
 
 type TripItem = {
   id: string
@@ -220,7 +221,7 @@ export default function TripPlanner({ tripId }: { tripId: string }) {
           aria-label="Ask Voyagent about this trip"
           className="flex items-center gap-1.5 rounded-full bg-slate-900 border border-slate-800 px-3 py-1.5 shrink-0"
         >
-          <span className="text-sm leading-none">🦜</span>
+          <Logo className="w-4 h-4" />
           <span className="text-xs font-medium text-slate-300">Ask Voyagent</span>
         </Link>
       </div>

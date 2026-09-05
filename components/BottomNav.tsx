@@ -2,12 +2,14 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Logo from '@/components/Logo'
 
 const TABS = [
   { href: '/home', label: 'Home', icon: '🏠' },
   { href: '/explore', label: 'Explore', icon: '🧭' },
   { href: '/trips', label: 'Trips', icon: '🗓️' },
-  { href: '/chat', label: 'Plan', icon: '🦜' },
+  // The Plan tab carries the brand mark rather than an emoji.
+  { href: '/chat', label: 'Plan', icon: null },
 ] as const
 
 export default function BottomNav() {
@@ -31,7 +33,13 @@ export default function BottomNav() {
               isActive ? 'text-lime-400' : 'text-slate-500'
             }`}
           >
-            <span className="text-xl leading-none">{tab.icon}</span>
+            {tab.icon ? (
+              <span className="text-xl leading-none">{tab.icon}</span>
+            ) : (
+              // Sized a little wider than the emoji: it's a fine-stroke
+              // horizontal mark and needs the room to stay legible at nav size.
+              <Logo className="w-7 h-5" />
+            )}
             <span className="text-xs font-medium">{tab.label}</span>
           </Link>
         )
