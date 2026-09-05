@@ -35,6 +35,8 @@ export async function POST(req: NextRequest) {
       pnr,
       hotel_ref: hotelRef,
       status: 'confirmed',
+      // Recorded so the booking can link back to the itinerary it paid for.
+      trip_id: typeof trip_id === 'string' && trip_id ? trip_id : null,
     })
 
     // When the payment came from the itinerary builder, flip that trip to

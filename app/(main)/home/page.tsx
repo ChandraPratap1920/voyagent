@@ -30,6 +30,7 @@ export default function HomePage() {
   const [loadingBookings, setLoadingBookings] = useState(true)
   const [search, setSearch] = useState('')
   const [saved, setSaved] = useState<SavedRow[]>([])
+  const [alertCount, setAlertCount] = useState(0)
   const router = useRouter()
 
   useEffect(() => {
@@ -61,6 +62,11 @@ export default function HomePage() {
       .then((res) => (res.ok ? res.json() : []))
       .then(setSaved)
       .catch(() => setSaved([]))
+
+    fetch('/api/notifications')
+      .then((res) => (res.ok ? res.json() : { count: 0 }))
+      .then((d) => setAlertCount(d.count ?? 0))
+      .catch(() => setAlertCount(0))
   }, [])
 
   // Trending cards now open the destination page instead of deep-linking into
@@ -81,9 +87,18 @@ export default function HomePage() {
             <p className="font-bold leading-tight">{name}! 👋</p>
           </div>
         </Link>
-        <span className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-sm">
+        <Link
+          href="/notifications"
+          aria-label="Notifications"
+          className="relative w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-sm shrink-0"
+        >
           🔔
-        </span>
+          {alertCount > 0 && (
+            <span className="absolute -top-0.5 -right-0.5 min-w-4 h-4 px-1 rounded-full bg-lime-400 text-slate-900 text-[10px] font-bold flex items-center justify-center">
+              {alertCount}
+            </span>
+          )}
+        </Link>
       </div>
 
       <div className="px-6 pt-4">
@@ -124,7 +139,11 @@ export default function HomePage() {
       <div className="px-6 pt-6">
         <div className="flex items-center justify-between mb-3">
           <h2 className="font-bold">🎫 My Bookings</h2>
-          {bookings.length > 0 && <span className="text-lime-400 text-sm">View all</span>}
+          {bookings.length > 0 && (
+            <Link href="/bookings" className="text-lime-400 text-sm">
+              View all
+            </Link>
+          )}
         </div>
 
         {!loadingBookings && bookings.length === 0 && (
@@ -145,14 +164,21 @@ export default function HomePage() {
 
         {bookings.length > 0 && (
           <div className="space-y-3">
-            {bookings.map((b) => (
-              <div key={b.id} className="rounded-2xl bg-slate-900 border border-slate-800 px-4 py-4">
-                <p className="font-semibold">{b.destination}</p>
-                <p className="text-xs text-slate-400 mt-1">
-                  PNR {b.pnr}
-                  {b.trip_cost_inr ? ` · ₹${b.trip_cost_inr.toLocaleString('en-IN')}` : ''}
-                </p>
-              </div>
+            {bookings.slice(0, 2).map((b) => (
+              <Link
+                key={b.id}
+                href={`/bookings/${b.id}`}
+                className="flex items-center justify-between gap-3 rounded-2xl bg-slate-900 border border-slate-800 px-4 py-4"
+              >
+                <div className="min-w-0">
+                  <p className="font-semibold truncate">{b.destination}</p>
+                  <p className="text-xs text-slate-400 mt-1">
+                    PNR {b.pnr}
+                    {b.trip_cost_inr ? ` · ₹${b.trip_cost_inr.toLocaleString('en-IN')}` : ''}
+                  </p>
+                </div>
+                <span className="text-slate-500 shrink-0">›</span>
+              </Link>
             ))}
           </div>
         )}

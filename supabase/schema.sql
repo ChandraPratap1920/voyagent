@@ -146,3 +146,10 @@ create policy "Users can view own support tickets" on support_tickets
   for select using (auth.uid() = user_id);
 create policy "Users can raise own support tickets" on support_tickets
   for insert with check (auth.uid() = user_id);
+
+-- A booking made from the itinerary builder knows which trip it paid for, but
+-- had nowhere to record it — so there was no way back from a booking to the
+-- day-by-day plan. Nullable because the quick flight+hotel path has no trip.
+-- "on delete set null" keeps the payment record if the trip is deleted.
+alter table bookings add column if not exists trip_id uuid references trips(id) on delete set null;
+create index if not exists bookings_user_idx on bookings (user_id, created_at desc);
