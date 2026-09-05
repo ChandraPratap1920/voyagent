@@ -46,6 +46,8 @@ function ChatPageInner() {
   // What the traveller actually said, so the thread reads like a conversation
   // instead of leaving their words stranded in the input box.
   const [said, setSaid] = useState<string[]>([])
+  // True when the model call failed and the deterministic parser answered.
+  const [degraded, setDegraded] = useState(false)
   const stageTimer = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const { setParsedTrip } = useTrip()
@@ -75,6 +77,7 @@ function ChatPageInner() {
   function resetConversation() {
     setMessage('')
     setSaid([])
+    setDegraded(false)
     setResult(null)
     setError(null)
     setLoading(false)
@@ -108,7 +111,8 @@ function ChatPageInner() {
       })
 
       if (!res.ok) throw new Error('Trip parsing failed')
-      const parsed: ParsedTrip = await res.json()
+      const parsed: ParsedTrip & { degraded?: boolean } = await res.json()
+      setDegraded(Boolean(parsed.degraded))
 
       // Make sure the animation has cycled through at least once before
       // showing the result, so it doesn't flash instantly on a fast reply.
@@ -264,6 +268,13 @@ function ChatPageInner() {
             {/* Somewhere Voyagent's parse can actually land. This writes a real
                 trip with its days already laid out, so it appears in Trips and
                 survives a refresh — the old flow held it in memory only. */}
+            {degraded && (
+              <p className="text-xs text-amber-300/90 leading-relaxed pt-1">
+                I read that one myself — my AI is briefly unavailable, so check the details above
+                a little more carefully than usual.
+              </p>
+            )}
+
             {missing.length > 0 && (
               <p className="text-xs text-slate-400 leading-relaxed pt-1">
                 Still need your {missing.join(' and ')} — just tell me below and I&apos;ll add it to

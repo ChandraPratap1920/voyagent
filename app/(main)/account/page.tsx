@@ -48,6 +48,10 @@ export default function AccountPage() {
     router.push('/login')
   }
 
+  // Someone who abandoned the quiz saw three em-dashes and a button offering
+  // to "retake" something they never took.
+  const hasProfile = Boolean(profile?.personality || profile?.budget_style || profile?.pace)
+
   return (
     <main className="pb-24">
       <div className="px-6 pt-8 pb-4 flex items-center gap-3">
@@ -88,8 +92,13 @@ export default function AccountPage() {
               href="/profile"
               className="block text-center text-lime-400 text-sm mt-3 rounded-full border border-slate-800 py-2.5"
             >
-              Retake the quiz
+              {hasProfile ? 'Retake the quiz' : 'Take the quiz'}
             </Link>
+            {!hasProfile && (
+              <p className="text-xs text-slate-500 leading-relaxed mt-2 text-center">
+                Two minutes, and Voyagent starts tailoring what it suggests.
+              </p>
+            )}
           </div>
 
           <div className="px-6 mb-6">
