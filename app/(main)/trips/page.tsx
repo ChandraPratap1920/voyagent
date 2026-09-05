@@ -7,6 +7,44 @@ import destinations from '@/data/destinations.json'
 
 const CITIES = destinations.map((d) => d.name)
 
+// Date maths on the YYYY-MM-DD strings the date input speaks, done in UTC so a
+// trip doesn't shift a day for anyone east or west of the server.
+function addDays(iso: string, days: number): string {
+  const [y, m, d] = iso.split('-').map(Number)
+  const dt = new Date(Date.UTC(y, m - 1, d))
+  dt.setUTCDate(dt.getUTCDate() + days)
+  return dt.toISOString().slice(0, 10)
+}
+
+function daysBetween(from: string, to: string): number {
+  const ms = (iso: string) => {
+    const [y, m, d] = iso.split('-').map(Number)
+    return Date.UTC(y, m - 1, d)
+  }
+  return Math.round((ms(to) - ms(from)) / 86_400_000)
+}
+
+function prettyDate(iso: string): string {
+  const [y, m, d] = iso.split('-').map(Number)
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-IN', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+    timeZone: 'UTC',
+  })
+}
+
+// A date input only opens its calendar from the small icon in Chrome, so
+// tapping the field itself appeared to do nothing. showPicker throws if it
+// isn't treated as a user gesture, which is harmless here.
+function openPicker(e: React.SyntheticEvent<HTMLInputElement>) {
+  try {
+    e.currentTarget.showPicker?.()
+  } catch {
+    /* the field still types normally */
+  }
+}
+
 type TripSummary = {
   id: string
   title: string | null
@@ -65,6 +103,26 @@ function TripsPageInner() {
   }, [])
 
   const totalNights = legs.reduce((sum, l) => sum + l.nights, 0)
+
+  // The return date isn't stored — it's start date plus the nights you've
+  // planned. Editing it works the other way round and stretches or shortens
+  // the final stop, which is the only unambiguous reading when a trip has
+  // several cities.
+  const today = new Date().toISOString().slice(0, 10)
+  const returnDate = startDate ? addDays(startDate, totalNights) : ''
+
+  function setReturnDate(next: string) {
+    if (!startDate || !next) return
+    const nights = daysBetween(startDate, next)
+    if (nights < 1) return
+
+    const delta = nights - totalNights
+    setLegs((prev) =>
+      prev.map((l, i) =>
+        i === prev.length - 1 ? { ...l, nights: Math.min(30, Math.max(1, l.nights + delta)) } : l
+      )
+    )
+  }
 
   function updateLeg(index: number, patch: Partial<Leg>) {
     setLegs((prev) => prev.map((l, i) => (i === index ? { ...l, ...patch } : l)))
@@ -181,29 +239,67 @@ function TripsPageInner() {
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="text-xs text-slate-400 block mb-1">Start date</label>
+              <label htmlFor="trip-start" className="text-xs text-slate-400 block mb-1">
+                Start date
+              </label>
               <input
+                id="trip-start"
                 type="date"
                 value={startDate}
+                min={today}
+                onFocus={openPicker}
+                onClick={openPicker}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm outline-none"
+                className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm outline-none focus:border-lime-400"
               />
             </div>
             <div>
-              <label className="text-xs text-slate-400 block mb-1">Travelers</label>
+              <label htmlFor="trip-return" className="text-xs text-slate-400 block mb-1">
+                Return date
+              </label>
               <input
-                type="number"
-                min={1}
-                value={travelers}
-                onChange={(e) => setTravelers(Math.max(1, Number(e.target.value) || 1))}
-                className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm outline-none"
+                id="trip-return"
+                type="date"
+                value={returnDate}
+                min={startDate ? addDays(startDate, 1) : today}
+                disabled={!startDate}
+                onFocus={openPicker}
+                onClick={openPicker}
+                onChange={(e) => setReturnDate(e.target.value)}
+                className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm outline-none focus:border-lime-400 disabled:opacity-50"
               />
             </div>
+          </div>
+
+          {!startDate && (
+            <p className="text-xs text-slate-500 -mt-3">
+              Pick a start date and the return date fills in from your nights.
+            </p>
+          )}
+
+          <div>
+            <label htmlFor="trip-travelers" className="text-xs text-slate-400 block mb-1">
+              Travelers
+            </label>
+            <input
+              id="trip-travelers"
+              type="number"
+              min={1}
+              value={travelers}
+              onChange={(e) => setTravelers(Math.max(1, Number(e.target.value) || 1))}
+              className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm outline-none focus:border-lime-400"
+            />
           </div>
 
           <p className="text-sm text-slate-400">
             {legs.map((l) => `${l.destination} ${l.nights}N`).join(' → ')} ·{' '}
             <span className="text-white font-medium">{totalNights} days</span>
+            {startDate && (
+              <>
+                {' · '}
+                {prettyDate(startDate)} → {prettyDate(returnDate)}
+              </>
+            )}
           </p>
 
           {error && <p className="text-sm text-red-400">{error}</p>}
