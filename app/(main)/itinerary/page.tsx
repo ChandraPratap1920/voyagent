@@ -62,7 +62,7 @@ export default function ItineraryPage() {
       {tip && (
         <div className="px-6 mb-6">
           <div className="rounded-2xl border border-lime-400/30 bg-lime-400/10 px-4 py-3">
-            <p className="text-xs text-lime-300 font-semibold mb-1">🦜 Vito&apos;s tip for you</p>
+            <p className="text-xs text-lime-300 font-semibold mb-1">🦜 Voyagent&apos;s tip for you</p>
             <p className="text-sm text-lime-100">{tip}</p>
           </div>
         </div>

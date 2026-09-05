@@ -64,7 +64,7 @@ export default function HomePage() {
   }, [])
 
   // Trending cards now open the destination page instead of deep-linking into
-  // chat, so this is only the plain "start a conversation with Vito" path.
+  // chat, so this is only the plain "start a conversation with Voyagent" path.
   function planTrip() {
     router.push('/chat')
   }

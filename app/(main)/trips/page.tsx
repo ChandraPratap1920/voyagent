@@ -28,14 +28,14 @@ function TripsPageInner() {
   const [trips, setTrips] = useState<TripSummary[]>([])
   const [loading, setLoading] = useState(true)
 
-  // Destination pages and Vito link here with ?new=Goa to jump straight into
+  // Destination pages link here with ?new=Goa to jump straight into
   // the form with that city pre-filled.
   const presetCity = searchParams.get('new')
   const [creating, setCreating] = useState(() => presetCity !== null)
   const [legs, setLegs] = useState<Leg[]>(() => [
     {
       destination: presetCity && CITIES.includes(presetCity) ? presetCity : CITIES[0],
-      // Vito passes ?nights= from the duration it parsed.
+      // ?nights= carries the duration through from the linking page.
       nights: Math.min(Math.max(Number(searchParams.get('nights')) || 3, 1), 30),
     },
   ])

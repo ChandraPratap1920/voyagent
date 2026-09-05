@@ -35,7 +35,7 @@ function ChatPageInner() {
   const [creating, setCreating] = useState(false)
   const [createError, setCreateError] = useState<string | null>(null)
 
-  // Vito can name any city on earth; only these have a catalogue behind them.
+  // Voyagent can name any city on earth; only these have a catalogue behind them.
   const matchedCity = matchCity(result?.destination)
 
   useEffect(() => {
@@ -85,7 +85,7 @@ function ChatPageInner() {
       setResult(parsed)
       setParsedTrip(parsed)
     } catch {
-      setError("Vito couldn't quite catch that — try rephrasing with destination, days, budget, and travelers.")
+      setError("Voyagent couldn't quite catch that — try rephrasing with destination, days, budget, and travelers.")
     } finally {
       if (stageTimer.current) clearInterval(stageTimer.current)
       setLoading(false)
@@ -97,7 +97,7 @@ function ChatPageInner() {
   }
 
   // The parse used to live only in React state, so a refresh lost it. Writing a
-  // real trip row here is what makes Vito's plan show up in Trips and survive.
+  // real trip row here is what makes Voyagent's plan show up in Trips and survive.
   async function createTrip() {
     if (!matchedCity || creating) return
 
@@ -148,7 +148,7 @@ function ChatPageInner() {
           🦜
         </div>
         <div className="min-w-0 flex-1">
-          <h1 className="font-bold text-lg leading-tight">Vito</h1>
+          <h1 className="font-bold text-lg leading-tight">Voyagent</h1>
           <p className="text-slate-400 text-sm leading-tight">your AI travel agent</p>
         </div>
 
@@ -217,7 +217,7 @@ function ChatPageInner() {
               value={result.travelers ? `${result.travelers}` : '— (how many people?)'}
             />
 
-            {/* Somewhere Vito's parse can actually land. This writes a real
+            {/* Somewhere Voyagent's parse can actually land. This writes a real
                 trip with its days already laid out, so it appears in Trips and
                 survives a refresh — the old flow held it in memory only. */}
             {matchedCity && (
@@ -241,7 +241,7 @@ function ChatPageInner() {
 
             {createError && <p className="text-red-400 text-sm">{createError}</p>}
 
-            {/* Vito will happily parse "Paris" — say so plainly rather than
+            {/* Voyagent will happily parse "Paris" — say so plainly rather than
                 creating a trip whose days have nothing to fill them with. */}
             {result.destination && !matchedCity && (
               <div className="rounded-xl border border-amber-900 bg-amber-950/40 px-3 py-2.5 text-xs text-amber-200 leading-relaxed">

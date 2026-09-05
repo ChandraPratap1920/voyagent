@@ -1,6 +1,6 @@
 import destinations from '@/data/destinations.json'
 
-// Vito's parser is deliberately unconstrained — lib/ai.ts asks for a
+// Voyagent's parser is deliberately unconstrained — lib/ai.ts asks for a
 // destination string and takes whatever the model says, which is the right
 // call for a parser but means it will happily return "Paris". Matching that
 // against the catalogue is done here, *after* the parse, so the AI itself
@@ -37,7 +37,7 @@ const ALIASES: Record<string, string> = {
 
 /**
  * Resolves free text to a catalogue city name, or null if we don't cover it.
- * Handles the shapes Vito actually returns: "goa", "Goa, India", "North Goa".
+ * Handles the shapes Voyagent actually returns: "goa", "Goa, India", "North Goa".
  */
 export function matchCity(input: string | null | undefined): string | null {
   if (!input) return null

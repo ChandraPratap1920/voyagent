@@ -21,7 +21,7 @@ const placeCount = hotels.length + restaurants.length + experiences.length
 const FAQS: { q: string; a: string }[] = [
   {
     q: 'How do I plan a trip?',
-    a: 'Two ways, and they meet in the same place. Tell Vito what you want in plain English — "5 days in Bali under ₹60K for 2" — and it drafts the trip for you. Or open Trips and build it yourself, day by day. Either way you end up with a plan you can edit.',
+    a: 'Two ways, and they meet in the same place. Tell Voyagent what you want in plain English — "5 days in Bali under ₹60K for 2" — and it drafts the trip for you. Or open Trips and build it yourself, day by day. Either way you end up with a plan you can edit.',
   },
   {
     q: 'Are the places real?',
@@ -84,7 +84,7 @@ export default function SupportPage() {
             className="rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-3"
           >
             <p className="text-lg leading-none mb-1.5">🦜</p>
-            <p className="text-sm font-medium">Ask Vito</p>
+            <p className="text-sm font-medium">Ask Voyagent</p>
             <p className="text-xs text-slate-500">Trip questions</p>
           </Link>
         </div>

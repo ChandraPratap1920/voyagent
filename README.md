@@ -38,7 +38,7 @@ No UI polish yet beyond login/signup — that's Day 2+.
 ## Still to build (Day 2 onward)
 
 - `/profile` — the 3-question personality quiz UI, POSTs to `/api/profile`
-- `/chat` — the Vito chat UI, calls `/api/parse-trip`, shows the staged
+- `/chat` — the Voyagent chat UI, calls `/api/parse-trip`, shows the staged
   "Research Agent... Budget Agent..." loading animation over the one real Claude call
 - `/results` — flight/hotel cards, reads from `/api/flights` + `/api/hotels`, uses
   `TripContext.budgetBreakdown()` for the running total

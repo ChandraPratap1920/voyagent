@@ -65,7 +65,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ ci
         </div>
       </div>
 
-      {/* Two ways forward: build it yourself, or let Vito draft it. Chat is one
+      {/* Two ways forward: build it yourself, or let Voyagent draft it. Chat is one
           path from discovery now, not the only one. */}
       <div className="px-6 pt-5 space-y-3">
         <Link
@@ -78,7 +78,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ ci
           href={`/chat?dest=${encodeURIComponent(destination.name)}`}
           className="block w-full text-center rounded-full border border-slate-700 text-slate-300 font-medium py-3"
         >
-          Ask Vito to plan it 🦜
+          Ask Voyagent to plan it 🦜
         </Link>
       </div>
 
