@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, Suspense } from 'react'
 import { useTrip, ParsedTrip } from '@/context/TripContext'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { matchCity, CITY_NAMES } from '@/lib/destinations'
 
 const AGENT_STAGES = [
   'Research Agent scouting options…',
@@ -31,6 +32,11 @@ function ChatPageInner() {
   const { setParsedTrip } = useTrip()
   const router = useRouter()
   const [confirmingReset, setConfirmingReset] = useState(false)
+  const [creating, setCreating] = useState(false)
+  const [createError, setCreateError] = useState<string | null>(null)
+
+  // Vito can name any city on earth; only these have a catalogue behind them.
+  const matchedCity = matchCity(result?.destination)
 
   useEffect(() => {
     return () => {
@@ -44,6 +50,7 @@ function ChatPageInner() {
     setError(null)
     setLoading(false)
     setConfirmingReset(false)
+    setCreateError(null)
   }
 
   async function handleSend() {
@@ -87,6 +94,43 @@ function ChatPageInner() {
 
   function goToResults() {
     router.push('/results')
+  }
+
+  // The parse used to live only in React state, so a refresh lost it. Writing a
+  // real trip row here is what makes Vito's plan show up in Trips and survive.
+  async function createTrip() {
+    if (!matchedCity || creating) return
+
+    setCreating(true)
+    setCreateError(null)
+
+    const nights = Math.min(Math.max(result?.duration_days ?? 3, 1), 30)
+
+    try {
+      const res = await fetch('/api/trips', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          legs: [{ destination: matchedCity, nights }],
+          title: `${nights}-day ${matchedCity} trip`,
+          travelers: result?.travelers ?? 1,
+          budget_inr: result?.budget_inr ?? null,
+        }),
+      })
+
+      const data = await res.json().catch(() => null)
+
+      if (!res.ok) {
+        setCreateError(data?.error ?? 'Could not create that trip. Please try again.')
+        return
+      }
+
+      router.push(`/trips/${data.id}`)
+    } catch {
+      setCreateError('Could not create that trip. Please try again.')
+    } finally {
+      setCreating(false)
+    }
   }
 
   return (
@@ -156,7 +200,10 @@ function ChatPageInner() {
           <div className="rounded-2xl bg-slate-900/70 border border-slate-800 px-4 py-4 max-w-[92%] space-y-3">
             <p className="text-sm text-slate-400">Here&apos;s what I picked up — check it over:</p>
 
-            <FormField label="Destination" value={result.destination ?? '— (tell me where!)'} />
+            <FormField
+              label="Destination"
+              value={matchedCity ?? result.destination ?? '— (tell me where!)'}
+            />
             <FormField
               label="Duration"
               value={result.duration_days ? `${result.duration_days} days` : '— (how many days?)'}
@@ -170,28 +217,40 @@ function ChatPageInner() {
               value={result.travelers ? `${result.travelers}` : '— (how many people?)'}
             />
 
-            <button
-              onClick={goToResults}
-              className="w-full rounded-full bg-lime-400 text-slate-900 font-semibold py-2.5 mt-2"
-            >
-              Looks good — show me options
-            </button>
-
-            {/* Vito's parse finally has somewhere real to land: a day-by-day
-                plan you own, rather than jumping straight to checkout. */}
-            {result.destination && (
+            {/* Somewhere Vito's parse can actually land. This writes a real
+                trip with its days already laid out, so it appears in Trips and
+                survives a refresh — the old flow held it in memory only. */}
+            {matchedCity && (
               <button
-                onClick={() => {
-                  const params = new URLSearchParams({ new: result.destination! })
-                  if (result.duration_days) params.set('nights', String(result.duration_days))
-                  if (result.travelers) params.set('travelers', String(result.travelers))
-                  if (result.budget_inr) params.set('budget', String(result.budget_inr))
-                  router.push(`/trips?${params}`)
-                }}
+                onClick={createTrip}
+                disabled={creating}
+                className="w-full rounded-full bg-lime-400 text-slate-900 font-semibold py-2.5 mt-2 disabled:opacity-60"
+              >
+                {creating ? 'Creating your trip…' : 'Create this trip 🗓️'}
+              </button>
+            )}
+
+            {matchedCity && (
+              <button
+                onClick={goToResults}
                 className="w-full rounded-full border border-slate-700 text-slate-300 font-medium py-2.5"
               >
-                Build a day-by-day plan 🗓️
+                Just book a flight + hotel
               </button>
+            )}
+
+            {createError && <p className="text-red-400 text-sm">{createError}</p>}
+
+            {/* Vito will happily parse "Paris" — say so plainly rather than
+                creating a trip whose days have nothing to fill them with. */}
+            {result.destination && !matchedCity && (
+              <div className="rounded-xl border border-amber-900 bg-amber-950/40 px-3 py-2.5 text-xs text-amber-200 leading-relaxed">
+                We don&apos;t cover {result.destination} yet — Voyagent has {CITY_NAMES.length}{' '}
+                destinations so far.{' '}
+                <Link href="/explore" className="underline font-medium">
+                  See where we go
+                </Link>
+              </div>
             )}
           </div>
         )}

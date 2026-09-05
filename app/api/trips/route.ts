@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
+import { matchCity } from '@/lib/destinations'
 
 // GET  /api/trips  → the user's trips, newest first, with a planned-% summary
 // POST /api/trips  → create a trip from city legs
@@ -79,10 +80,25 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'at least one leg is required' }, { status: 400 })
   }
 
+  // A trip to a city we have no catalogue for is a trip of empty days, so it's
+  // rejected here rather than at any one caller. Also normalises casing, so
+  // "goa" and "Goa" can't become two different destinations on one trip.
+  const resolvedLegs = []
+  for (const leg of cleanLegs) {
+    const city = matchCity(leg.destination)
+    if (!city) {
+      return NextResponse.json(
+        { error: `We don't cover ${leg.destination} yet.` },
+        { status: 400 }
+      )
+    }
+    resolvedLegs.push({ destination: city, nights: leg.nights })
+  }
+
   const title =
     typeof body.title === 'string' && body.title.trim()
       ? body.title.trim()
-      : `${cleanLegs.map((l) => l.destination).join(' → ')} trip`
+      : `${resolvedLegs.map((l) => l.destination).join(' → ')} trip`
 
   const { data: trip, error } = await supabase
     .from('trips')
@@ -103,7 +119,7 @@ export async function POST(req: NextRequest) {
   // Expand legs into consecutive numbered days.
   const dayRows: { trip_id: string; day_number: number; destination: string }[] = []
   let dayNumber = 1
-  for (const leg of cleanLegs) {
+  for (const leg of resolvedLegs) {
     for (let n = 0; n < leg.nights; n++) {
       dayRows.push({ trip_id: trip.id, day_number: dayNumber++, destination: leg.destination })
     }
