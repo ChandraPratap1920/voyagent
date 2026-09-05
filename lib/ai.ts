@@ -11,10 +11,32 @@ const openai = new OpenAI({
   baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/',
 })
 
-// gemini-flash-latest is Google's evergreen alias — it always points at
-// whatever Flash model is currently recommended, so it won't suddenly
-// 404 the way a dated model name can when Google deprecates it.
-const MODEL = 'gemini-flash-latest'
+// The evergreen aliases avoid the 404 you get when Google retires a dated
+// model name (gemini-2.0-flash, 2.5-flash and 2.5-flash-lite are all 404 now).
+// The trade-off is that the model underneath can move: gemini-flash-latest now
+// resolves to gemini-3.8-flash, whose free tier allows only 20 requests and
+// was returning 429 for every parse. Flash-Lite has its own, larger free quota
+// and parses these prompts identically.
+const MODEL = 'gemini-flash-lite-latest'
+
+// Gemini returns 429 when the free-tier quota is hit and 503 when the model is
+// briefly overloaded. Both are often transient, and a demo shouldn't fall over
+// on the first one — but the wait has to stay short enough that someone is
+// still looking at the screen.
+const RETRY_DELAYS_MS = [1200, 3000]
+
+async function withRetry<T>(call: () => Promise<T>): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await call()
+    } catch (err) {
+      const status = (err as { status?: number })?.status
+      const retryable = status === 429 || status === 503
+      if (!retryable || attempt >= RETRY_DELAYS_MS.length) throw err
+      await new Promise((r) => setTimeout(r, RETRY_DELAYS_MS[attempt]))
+    }
+  }
+}
 
 export type ParsedTrip = {
   destination: string | null
@@ -29,14 +51,16 @@ Return ONLY a JSON object, no other text, matching exactly this shape:
 If a field isn't mentioned, use null. Do not guess or invent values. Budget should be a plain number in INR (convert "25K" to 25000).`
 
 export async function parseTripMessage(message: string): Promise<ParsedTrip> {
-  const response = await openai.chat.completions.create({
-    model: MODEL,
-    response_format: { type: 'json_object' },
-    messages: [
-      { role: 'system', content: PARSE_TRIP_SYSTEM_PROMPT },
-      { role: 'user', content: message },
-    ],
-  })
+  const response = await withRetry(() =>
+    openai.chat.completions.create({
+      model: MODEL,
+      response_format: { type: 'json_object' },
+      messages: [
+        { role: 'system', content: PARSE_TRIP_SYSTEM_PROMPT },
+        { role: 'user', content: message },
+      ],
+    })
+  )
 
   const raw = response.choices[0]?.message?.content ?? '{}'
 
@@ -68,16 +92,18 @@ export async function getPersonalizedTip(
     profile.diet ? `, and follows a ${profile.diet} diet` : ''
   }.`
 
-  const response = await openai.chat.completions.create({
-    model: MODEL,
-    messages: [
-      {
-        role: 'system',
-        content: `${profileLine} Given a destination, give ONE short, specific, genuinely useful travel tip (max 25 words) that reflects this traveler's profile. No preamble, just the tip.`,
-      },
-      { role: 'user', content: destination },
-    ],
-  })
+  const response = await withRetry(() =>
+    openai.chat.completions.create({
+      model: MODEL,
+      messages: [
+        {
+          role: 'system',
+          content: `${profileLine} Given a destination, give ONE short, specific, genuinely useful travel tip (max 25 words) that reflects this traveler's profile. No preamble, just the tip.`,
+        },
+        { role: 'user', content: destination },
+      ],
+    })
+  )
 
   return response.choices[0]?.message?.content?.trim() ?? ''
 }
